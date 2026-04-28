@@ -40,3 +40,11 @@ Y por último, en la etapa de monitoreo, se simula el envío de métricas a otra
 Las métricas que considero importantes para monitorear esta aplicación en CloudWatch serían el tráfico de red entrante y saliente, los errores de aplicación, las solicitudes recibidas y el tiempo de carga de la aplicación/web.
 
 Configuraría una alerta para los errores de aplicación, que me envíe un correo electrónico cuando ocurra algún error en la app o alguna función que se ejecute en su despliegue.
+
+## Propuesta final
+
+Esta propuesta mejoraría el problema inicial al contenedorizar (lo cual permite que la app corra en cualquier entorno) y automatizar el despliegue a través de un pipeline CI/CD.
+
+Considero que la parte más difícil en una empresa real sería el pipeline; ¡no logré ni siquiera hacerlo funcionar en GitHub Actions!
+
+Por último, los beneficios más importantes de esta solución se encuentran en que la app ahora será funcional en cualquier máquina en la que se utilice gracias a la contenedorización (y además, gracias a este funcionamiento "universal", solo se necesita programar y probar UNA versión de la app), y que el despliegue va a ser mucho más rápido al realizar tanto el build como las pruebas y el despliegue como tal en un pipeline que se ejecuta en tan solo unos minutos.
