@@ -20,3 +20,17 @@ aws cloudformation create-stack \
     --stack-name nombre-del-stack \
     --template-body file://infaestructura.yaml \
     --capabilities CAPABILITY IAM
+
+## Pipeline CI/CD
+
+Esta actividad incluye un pipeline CI/CD que, aunque no se ejecutará en AWS, debería ser funcional en GitHub Actions. Este pipeline incluye las etapas de source, build, test, deploy y monitoreo.
+
+En la etapa Source, se recupera el código desde este mismo repo.
+
+En la etapa Build, se construye el contenedor, que tendrá como nombre "mi-app" (en un pipeline en AWS, esto se haría en AWS CodeBuild).
+
+En la etapa Test, se ejecuta Pytest. En una app real, Pytest ejecutaría pruebas unitarias, mas en este caso, para mantener simple el proyecto, solo hace un print que dice que se están ejecutando pruebas.
+
+En la etapa Deploy, se echa a andar el contenedor (en AWS, utilizaríamos CodeDeploy para esto).
+
+Y por último, en la etapa de monitoreo, se simula el envío de métricas a otra plataforma (que, en un pipeline ejecutado en AWS, sería CloudWatch).
