@@ -34,3 +34,9 @@ En la etapa Test, se ejecuta Pytest. En una app real, Pytest ejecutaría pruebas
 En la etapa Deploy, se echa a andar el contenedor (en AWS, utilizaríamos CodeDeploy para esto).
 
 Y por último, en la etapa de monitoreo, se simula el envío de métricas a otra plataforma (que, en un pipeline ejecutado en AWS, sería CloudWatch).
+
+## Monitoreo y respuesta
+
+Las métricas que considero importantes para monitorear esta aplicación en CloudWatch serían el tráfico de red entrante y saliente, los errores de aplicación, las solicitudes recibidas y el tiempo de carga de la aplicación/web.
+
+Configuraría una alerta para los errores de aplicación, que me envíe un correo electrónico cuando ocurra algún error en la app o alguna función que se ejecute en su despliegue.
