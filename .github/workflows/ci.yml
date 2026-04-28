@@ -13,6 +13,7 @@ jobs:
         run: |
           chmod +x setup_env.sh
           ./setup_env.sh
+          pip install pytest
 
       - name: Ejecutar pruebas unitarias
         run: |
