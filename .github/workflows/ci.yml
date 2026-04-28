@@ -17,8 +17,8 @@ jobs:
 
       - name: Ejecutar pruebas unitarias
         run: |
-          pytest
           echo "Ejecutando tests..."
+          python -m pytest app/tests/ -v
 
       - name: Build de Imagen Docker
         run: |
